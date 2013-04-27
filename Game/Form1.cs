@@ -83,7 +83,16 @@ namespace Game
         private void button2_Click(object sender, EventArgs e)
         {
              gb= new GameBoard();
-           
+             do 
+                {
+                   for (time2 = time; time < 60; time ++ )
+                   {
+                      time++;
+                   }
+
+                }
+             while (time == 60);
+             timer1.Start();
 
         }
         private void timer1_Tick(object sender, EventArgs e)
