@@ -76,7 +76,30 @@ namespace Game
              }
 
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+             gb= new GameBoard();
+           
 
-
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (time == 0)
+            {
+                timer1.Stop();
+                time = 60;
+                MessageBox.Show("GAME OVER");
+                timer1.Start();
+            }
+            else
+            {
+                time = time - 1;
+                label2.Text = "TIME: " + time;
+            }
+        }
     }
 }
