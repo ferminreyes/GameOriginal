@@ -34,11 +34,11 @@ namespace Game
 
             try
             {
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 8; i++)
                 {
 
                     List<Sprite> sublist = new List<Sprite>();
-                    for (int j = 0; j < 6; j++)
+                    for (int j = 0; j < 9; j++)
                     {
                         sublist.Add(new Sprite(i, j, (Sprite.Type)random.Next(3)));
 
@@ -288,8 +288,8 @@ namespace Game
 
     public class Sprite: GameObject
     {
-        public enum Type {empty,green,bush}
-        public int size = 64;
+        public enum Type {empty,green,bush,house,bear}
+           public int size = 42;
         public int i, j;
         public int x ;
         public int y;
@@ -306,21 +306,25 @@ namespace Game
             this.j=j;
             x = i * size;
             y = j * size;
-            _frames.Add(new Bitmap(@"C:\Users\toshiba\Desktop\GameOriginal\Game\Game\images\dirt.bmp"));
-            _frames.Add(new Bitmap(@"C:\Users\toshiba\Desktop\GameOriginal\Game\Game\images\grass.bmp"));
-            _frames.Add(new Bitmap(@"C:\Users\toshiba\Desktop\GameOriginal\Game\Game\images\bush.bmp"));
-            
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\dirt.bmp"));
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\grass.bmp"));
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\bush.bmp"));
+
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\house.bmp"));//
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\bear.bmp"));
         }
 
         public Sprite(Sprite.Type current)
         {
             this.current = current;
-            this.i = 7;
+            this.i = 9;// nueva posición de la imagen siguiente
             this.j = 1;
-            _frames.Add(new Bitmap(@"C:\Users\toshiba\Desktop\GameOriginal\Game\Game\images\dirt.bmp"));
-            _frames.Add(new Bitmap(@"C:\Users\toshiba\Desktop\GameOriginal\Game\Game\images\grass.bmp"));
-            _frames.Add(new Bitmap(@"C:\Users\toshiba\Desktop\GameOriginal\Game\Game\images\bush.bmp"));
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\dirt.bmp"));
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\grass.bmp"));
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\bush.bmp"));
 
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\house.bmp"));//
+            _frames.Add(new Bitmap(@"C:\Users\toshiba\Documents\imagenes\bear.bmp"));
         }
 
 
